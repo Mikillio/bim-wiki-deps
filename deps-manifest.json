@@ -57,17 +57,35 @@
       "name": "Whisper large-v3 (CT2, plný)",
       "engine": "faster-whisper",
       "model_ref": "large-v3",
-      "mirror": false,
+      "mirror": true,
       "default_for_app_lang": "cs",
-      "note": "Default pri CS. Binárka stiahne oficiálnu CT2 verziu sama (upstream Systran), nezrkadlíme."
+      "note": "Default pri CS. Primárne upstream Systran/faster-whisper-large-v3 (binárka stiahne podľa názvu); fallback náš CT2 mirror.",
+      "mirror_hf_repo": "mikillicious/faster-whisper-large-v3",
+      "mirror_base_url": "https://huggingface.co/mikillicious/faster-whisper-large-v3/resolve/main/",
+      "files": [
+        "model.bin",
+        "config.json",
+        "tokenizer.json",
+        "vocabulary.json",
+        "preprocessor_config.json"
+      ]
     },
     "whisper-large-v3-turbo": {
       "name": "Whisper large-v3-turbo (CT2)",
       "engine": "faster-whisper",
       "model_ref": "large-v3-turbo",
-      "mirror": false,
+      "mirror": true,
       "default_for_app_lang": "en",
-      "note": "Default pri EN. Binárka stiahne oficiálnu CT2 verziu sama (upstream), nezrkadlíme."
+      "note": "Default pri EN. Primárne upstream deepdml/faster-whisper-large-v3-turbo-ct2 (binárka stiahne podľa názvu); fallback náš CT2 mirror.",
+      "mirror_hf_repo": "mikillicious/faster-whisper-large-v3-turbo-ct2",
+      "mirror_base_url": "https://huggingface.co/mikillicious/faster-whisper-large-v3-turbo-ct2/resolve/main/",
+      "files": [
+        "model.bin",
+        "config.json",
+        "tokenizer.json",
+        "vocabulary.json",
+        "preprocessor_config.json"
+      ]
     },
     "whisper-large-v3-turbo-sk": {
       "name": "NaiveNeuron SK (CT2 fine-tune)",
