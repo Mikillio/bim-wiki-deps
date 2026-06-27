@@ -41,5 +41,5 @@ gh workflow run mirror.yml \
 - ❌ **Poppler** — GPL, len oficiálny upstream (rehosting = GPL povinnosti).
 - ❌ **gemma4:31b (~20 GB)** — len Ollama register (priveľké, netreba).
 
-Licencie: Tesseract Apache, Whisper/CTranslate2 MIT, NaiveNeuron Apache — zrkadlenie OK
+Licencie: Tesseract Apache, Whisper/CTranslate2 MIT, NaiveNeuron MIT — zrkadlenie OK
 s uvedením autora. Whisper standalone nesie cuDNN (NVIDIA redistribučné podmienky).
