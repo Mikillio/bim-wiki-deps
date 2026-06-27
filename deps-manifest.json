@@ -2,7 +2,7 @@
   "schema": 1,
   "updated": "2026-06-27",
   "mirror_repo": "Mikillio/bim-wiki-deps",
-  "hf_org": "",
+  "hf_org": "mikillicious",
   "tools": {
     "ollama": {
       "name": "Ollama (LLM backend)",
@@ -50,6 +50,43 @@
       "required": false,
       "status": "planned",
       "note": "Jediný Python prípad. Python z python.org + Docling z PyPI; doplníme pri zapojení."
+    }
+  },
+  "models": {
+    "whisper-large-v3": {
+      "name": "Whisper large-v3 (CT2, plný)",
+      "engine": "faster-whisper",
+      "model_ref": "large-v3",
+      "mirror": false,
+      "default_for_app_lang": "cs",
+      "note": "Default pri CS. Binárka stiahne oficiálnu CT2 verziu sama (upstream Systran), nezrkadlíme."
+    },
+    "whisper-large-v3-turbo": {
+      "name": "Whisper large-v3-turbo (CT2)",
+      "engine": "faster-whisper",
+      "model_ref": "large-v3-turbo",
+      "mirror": false,
+      "default_for_app_lang": "en",
+      "note": "Default pri EN. Binárka stiahne oficiálnu CT2 verziu sama (upstream), nezrkadlíme."
+    },
+    "whisper-large-v3-turbo-sk": {
+      "name": "NaiveNeuron SK (CT2 fine-tune)",
+      "engine": "faster-whisper",
+      "model_ref": "mikillicious/whisper-large-v3-turbo-sk-ct2",
+      "hf_repo": "mikillicious/whisper-large-v3-turbo-sk-ct2",
+      "base_url": "https://huggingface.co/mikillicious/whisper-large-v3-turbo-sk-ct2/resolve/main/",
+      "files": [
+        "model.bin",
+        "config.json",
+        "tokenizer.json",
+        "vocabulary.json",
+        "preprocessor_config.json"
+      ],
+      "size": 1620000000,
+      "license": "MIT",
+      "mirror": true,
+      "default_for_app_lang": "sk",
+      "note": "Default pri SK. Náš predkonvertovaný CT2 mirror (public, anonymné HTTPS). Originál NaiveNeuron je transformers formát → nepoužiteľný priamo, preto tento CT2."
     }
   }
 }
