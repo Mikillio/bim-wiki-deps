@@ -34,8 +34,20 @@
       "name": "Tesseract OCR (+ slk/ces langdata)",
       "required": false,
       "platform": "windows",
-      "status": "planned",
-      "note": "Apache, zrkadliteľné. Konkrétny asset doplníme pri zapojení Tesseractu."
+      "archive": "7z",
+      "install_subdir": "tesseract",
+      "exe": "tesseract.exe",
+      "note": "Apache. Portable .7z (engine + slk/ces/eng tessdata) na našom mirrore. sha256/mirror_url doplní mirror Action po upload artefaktu.",
+      "versions": [
+        {
+          "version": "5.5.0",
+          "asset": "tesseract-5.5.0-win64-portable.7z",
+          "official_url": "",
+          "mirror_url": "",
+          "sha256": "",
+          "size": 0
+        }
+      ]
     },
     "poppler": {
       "name": "Poppler (PDF utils)",
