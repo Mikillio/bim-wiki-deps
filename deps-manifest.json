@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "updated": "2026-06-27",
+  "mirror_repo": "Mikillio/bim-wiki-deps",
+  "hf_org": "",
+  "tools": {
+    "ollama": {
+      "name": "Ollama (LLM backend)",
+      "required": true,
+      "type": "external_installer",
+      "official_url": "https://ollama.com/download",
+      "check": "binary",
+      "note": "Povinné. Aplikácia deteguje + otestuje spojenie + ollama pull modelov. Bez nášho zrkadla (Ollama register je robustný)."
+    },
+    "whisper": {
+      "name": "Faster-Whisper (standalone, Windows)",
+      "required": false,
+      "platform": "windows",
+      "archive": "7z",
+      "install_subdir": "whisper",
+      "exe": "Faster-Whisper-XXL/faster-whisper-xxl.exe",
+      "versions": [
+        {
+          "version": "r245.4",
+          "asset": "Faster-Whisper-XXL_r245.4_windows.7z",
+          "official_url": "https://github.com/Purfview/whisper-standalone-win/releases/download/Faster-Whisper-XXL/Faster-Whisper-XXL_r245.4_windows.7z",
+          "mirror_url": "",
+          "sha256": "",
+          "size": 1424256246
+        }
+      ]
+    },
+    "tesseract": {
+      "name": "Tesseract OCR (+ slk/ces langdata)",
+      "required": false,
+      "platform": "windows",
+      "status": "planned",
+      "note": "Apache, zrkadliteľné. Konkrétny asset doplníme pri zapojení Tesseractu."
+    },
+    "poppler": {
+      "name": "Poppler (PDF utils)",
+      "required": false,
+      "platform": "windows",
+      "mirror": false,
+      "status": "planned",
+      "note": "GPL — len oficiálny upstream, NEzrkadliť (rehosting = GPL povinnosti)."
+    },
+    "docling": {
+      "name": "Docling (+ Python)",
+      "required": false,
+      "status": "planned",
+      "note": "Jediný Python prípad. Python z python.org + Docling z PyPI; doplníme pri zapojení."
+    }
+  }
+}
