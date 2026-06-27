@@ -43,9 +43,9 @@
           "version": "5.5.0",
           "asset": "tesseract-5.5.0-win64-portable.7z",
           "official_url": "",
-          "mirror_url": "",
-          "sha256": "",
-          "size": 0
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/tesseract-5.5.0/tesseract-5.5.0-win64-portable.7z",
+          "sha256": "2e24448c5c5af2806e362f9c52eee544d70cac151a02799520c3ceac4898982d",
+          "size": 41528594
         }
       ]
     },
