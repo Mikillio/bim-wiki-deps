@@ -72,8 +72,20 @@
     "docling": {
       "name": "Docling (+ Python)",
       "required": false,
-      "status": "planned",
-      "note": "Jediný Python prípad. Python z python.org + Docling z PyPI; doplníme pri zapojení."
+      "platform": "windows",
+      "type": "python_package",
+      "pip_package": "docling",
+      "install_subdir": "docling",
+      "exe": "python/Scripts/docling.exe",
+      "note": "Jediný Python prípad (MIT + permisívne závislosti → bez GPL). Auto: embeddable Python (python.org) → get-pip → pip install setuptools/wheel + docling. Inštalácia ~370 MB wheelov (torch CPU 117 MB…); ML modely (~0,5–1 GB) ťahá Docling pri prvom behu.",
+      "python": {
+        "version": "3.12.8",
+        "asset": "python-3.12.8-embed-amd64.zip",
+        "official_url": "https://www.python.org/ftp/python/3.12.8/python-3.12.8-embed-amd64.zip",
+        "mirror_url": "",
+        "sha256": "8d3f33be9eb810f23c102f08475af2854e50484b8e4e06275e937be61ce3d2fb",
+        "size": 11094114
+      }
     }
   },
   "models": {
