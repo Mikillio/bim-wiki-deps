@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-06-27",
+  "updated": "2026-07-01",
   "mirror_repo": "Mikillio/bim-wiki-deps",
   "hf_org": "mikillicious",
   "tools": {
@@ -54,8 +54,20 @@
       "required": false,
       "platform": "windows",
       "mirror": false,
-      "status": "planned",
-      "note": "GPL — len oficiálny upstream, NEzrkadliť (rehosting = GPL povinnosti)."
+      "archive": "zip",
+      "install_subdir": "poppler",
+      "exe": "poppler-26.02.0/Library/bin/pdftoppm.exe",
+      "note": "GPL — NEzrkadliť (rehosting = GPL povinnosti). Sťahujeme z jeho VLASTNEJ distribúcie (oschwartz10612/poppler-windows) a voláme ako samostatný proces (shell-out, nie linkovanie) → bez GPL bremena. pdftotext je súrodenec pdftoppm.",
+      "versions": [
+        {
+          "version": "26.02.0-0",
+          "asset": "Release-26.02.0-0.zip",
+          "official_url": "https://github.com/oschwartz10612/poppler-windows/releases/download/v26.02.0-0/Release-26.02.0-0.zip",
+          "mirror_url": "",
+          "sha256": "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5",
+          "size": 16107283
+        }
+      ]
     },
     "docling": {
       "name": "Docling (+ Python)",
