@@ -38,6 +38,9 @@ gh workflow run mirror.yml \
 - ✅ **Binárky** (Whisper standalone, Tesseract) — sem (GitHub Release, limit 2 GB/súbor).
 - ✅ **Modely** (Whisper/NaiveNeuron/embedding) — na **HuggingFace** (free, bez limitu),
   nie sem (large-v3 ~3 GB > 2 GB; HF je na modely stavaný).
+- ✅ **ONNX modely** (`type: model_files` — reranker 91 MB Apache-2.0, NLI sudca 339 MB MIT) —
+  sem (malé, zmestia sa do Release limitu; upstream = Xenova HF ONNX exporty). Appka ich
+  sťahuje po súboroch so SHA-256 (fail-closed) a po inštalácii model reálne načíta.
 - ❌ **Poppler** — GPL, len oficiálny upstream (rehosting = GPL povinnosti).
 - ❌ **gemma4:31b (~20 GB)** — len Ollama register (priveľké, netreba).
 

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-07-01",
+  "updated": "2026-07-03",
   "mirror_repo": "Mikillio/bim-wiki-deps",
   "hf_org": "mikillicious",
   "tools": {
@@ -66,6 +66,56 @@
           "mirror_url": "",
           "sha256": "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5",
           "size": 16107283
+        }
+      ]
+    },
+    "reranker": {
+      "name": "Presnejšie radenie výsledkov (ONNX reranker)",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-reranker",
+      "note": "cross-encoder/ms-marco-MiniLM-L-6-v2 (Apache-2.0, sentence-transformers; ONNX konverzia Xenova, fp32). Beží na CPU cez onnxruntime — neberie VRAM. Appka stiahne súbory, overí SHA-256 a model hneď reálne načíta.",
+      "files": [
+        {
+          "version": "1",
+          "asset": "model.onnx",
+          "official_url": "https://huggingface.co/Xenova/ms-marco-MiniLM-L-6-v2/resolve/main/onnx/model.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/reranker-1/model.onnx",
+          "sha256": "c623d0bcb99f4622beb413eaef00cfbe5db20df9f1dd982da4b4f26022881870",
+          "size": 90992115
+        },
+        {
+          "version": "1",
+          "asset": "tokenizer.json",
+          "official_url": "https://huggingface.co/Xenova/ms-marco-MiniLM-L-6-v2/resolve/main/tokenizer.json",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/reranker-1/tokenizer.json",
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+          "size": 711396
+        }
+      ]
+    },
+    "nli": {
+      "name": "AI kontrolór tvrdení v odpovediach (NLI sudca)",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-nli",
+      "note": "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7 (MIT; ONNX konverzia Xenova, int8 kvantizácia = onnx/model_quantized.onnx — 339 MB namiesto 1,1 GB fp32, ~3× rýchlejšie na CPU). Poradie tried FIXNÉ: 0=entailment, 1=neutral, 2=contradiction (appka ho má napevno). Overené naživo na SK vetách 2026-07-03.",
+      "files": [
+        {
+          "version": "1",
+          "asset": "model.onnx",
+          "official_url": "https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7/resolve/main/onnx/model_quantized.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/nli-1/model.onnx",
+          "sha256": "ccb655bf617edf1d3b0ccdc5b4576a4322e28cee5ce9ab8cd21af4b1f13e6836",
+          "size": 338679132
+        },
+        {
+          "version": "1",
+          "asset": "tokenizer.json",
+          "official_url": "https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7/resolve/main/tokenizer.json",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/nli-1/tokenizer.json",
+          "sha256": "e23095eb61ba944c7be3a5d3e8ec19e37ce7ced0daa03550bde03e83c21b3f8a",
+          "size": 16316151
         }
       ]
     },
