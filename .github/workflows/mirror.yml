@@ -1,0 +1,63 @@
+name: mirror
+
+# Zrkadlí jeden upstream asset do našich Releases, zráta SHA-256 a doplní manifest.
+# Beží na GitHub infra (netreba sťahovať/nahrávať ručne). Spúšťa sa manuálne.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tool:
+        description: "Kľúč nástroja v manifeste (napr. whisper)"
+        required: true
+      version:
+        description: "Verzia (napr. r245.4) — musí existovať v manifeste"
+        required: true
+      asset_name:
+        description: "Názov súboru assetu"
+        required: true
+      upstream_url:
+        description: "Priama URL upstream assetu"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stiahni upstream asset
+        run: curl -fL --retry 3 "${{ inputs.upstream_url }}" -o "${{ inputs.asset_name }}"
+
+      - name: Zráta SHA-256
+        id: sum
+        run: echo "sha256=$(sha256sum "${{ inputs.asset_name }}" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Release + upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ inputs.tool }}-${{ inputs.version }}"
+          gh release view "$tag" >/dev/null 2>&1 || \
+            gh release create "$tag" -t "$tag" -n "Zrkadlo ${{ inputs.asset_name }} (upstream: ${{ inputs.upstream_url }})"
+          gh release upload "$tag" "${{ inputs.asset_name }}" --clobber
+
+      - name: Doplň manifest (sha256 + mirror_url)
+        run: |
+          tag="${{ inputs.tool }}-${{ inputs.version }}"
+          mirror="https://github.com/${{ github.repository }}/releases/download/$tag/${{ inputs.asset_name }}"
+          jq --arg t "${{ inputs.tool }}" --arg v "${{ inputs.version }}" \
+             --arg s "${{ steps.sum.outputs.sha256 }}" --arg m "$mirror" '
+            .tools[$t].versions |= map(if .version == $v then (.sha256 = $s | .mirror_url = $m) else . end)
+          ' deps-manifest.json > deps-manifest.tmp
+          mv deps-manifest.tmp deps-manifest.json
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deps-manifest.json
+          git commit -m "mirror: ${{ inputs.tool }} ${{ inputs.version }} — sha256 + mirror_url" || echo "bez zmeny"
+          git push

@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "updated": "2026-08-15",
+  "tools": {
+    "ollama": {
+      "name": "Ollama",
+      "required": true,
+      "type": "external_installer",
+      "official_url": "https://ollama.com/download"
+    },
+    "whisper": {
+      "name": "Faster-Whisper XXL (standalone)",
+      "required": false,
+      "platform": "windows",
+      "archive": "7z",
+      "install_subdir": "whisper",
+      "exe": "Faster-Whisper-XXL/faster-whisper-xxl.exe",
+      "note": "Zrkadlo vydania Purfview/whisper-standalone-win (Faster-Whisper, CTranslate2 — MIT). Balík obsahuje knižnice cuDNN podľa redistribučných podmienok NVIDIA.",
+      "versions": [
+        {
+          "version": "r245.4",
+          "asset": "Faster-Whisper-XXL_r245.4_windows.7z",
+          "official_url": "https://github.com/Purfview/whisper-standalone-win/releases/download/Faster-Whisper-XXL/Faster-Whisper-XXL_r245.4_windows.7z",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/whisper-r245.4/Faster-Whisper-XXL_r245.4_windows.7z",
+          "sha256": "237dee23939cdabfc96ef859fc5e584b842c3a5557e0d2ca744e1f87c14c5844",
+          "size": 1424256246
+        }
+      ]
+    },
+    "tesseract": {
+      "name": "Tesseract OCR",
+      "required": false,
+      "platform": "windows",
+      "archive": "7z",
+      "install_subdir": "tesseract",
+      "exe": "tesseract.exe",
+      "note": "Tesseract OCR (Apache-2.0). Portable .7z: engine + tessdata slk/ces/eng/osd.",
+      "versions": [
+        {
+          "version": "5.5.0",
+          "asset": "tesseract-5.5.0-win64-portable.7z",
+          "official_url": "",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/tesseract-5.5.0/tesseract-5.5.0-win64-portable.7z",
+          "sha256": "2e24448c5c5af2806e362f9c52eee544d70cac151a02799520c3ceac4898982d",
+          "size": 41528594
+        }
+      ]
+    },
+    "poppler": {
+      "name": "Poppler",
+      "required": false,
+      "platform": "windows",
+      "archive": "zip",
+      "install_subdir": "poppler",
+      "exe": "poppler-26.02.0/Library/bin/pdftoppm.exe",
+      "note": "GPL — nezrkadlené. Sťahuje sa priamo z distribúcie oschwartz10612/poppler-windows.",
+      "versions": [
+        {
+          "version": "26.02.0-0",
+          "asset": "Release-26.02.0-0.zip",
+          "official_url": "https://github.com/oschwartz10612/poppler-windows/releases/download/v26.02.0-0/Release-26.02.0-0.zip",
+          "mirror_url": "",
+          "sha256": "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5",
+          "size": 16107283
+        }
+      ]
+    },
+    "reranker": {
+      "name": "ONNX cross-encoder",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-reranker",
+      "note": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1 (Apache-2.0), ONNX uint8 export onnx/model_quint8_avx2.onnx.",
+      "files": [
+        {
+          "version": "2",
+          "asset": "model.onnx",
+          "official_url": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/resolve/main/onnx/model_quint8_avx2.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/reranker-2/model.onnx",
+          "sha256": "6c2513767fb63d008a4377bef7a7a3555433d9436342bb53e35a3a72ffc52d4b",
+          "size": 118620016
+        },
+        {
+          "version": "2",
+          "asset": "tokenizer.json",
+          "official_url": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/resolve/main/tokenizer.json",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/reranker-2/tokenizer.json",
+          "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+          "size": 17082660
+        }
+      ]
+    },
+    "nli": {
+      "name": "ONNX NLI model",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-nli",
+      "note": "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7 (MIT), ONNX int8 export Xenova (onnx/model_quantized.onnx).",
+      "files": [
+        {
+          "version": "1",
+          "asset": "model.onnx",
+          "official_url": "https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7/resolve/main/onnx/model_quantized.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/nli-1/model.onnx",
+          "sha256": "ccb655bf617edf1d3b0ccdc5b4576a4322e28cee5ce9ab8cd21af4b1f13e6836",
+          "size": 338679132
+        },
+        {
+          "version": "1",
+          "asset": "tokenizer.json",
+          "official_url": "https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7/resolve/main/tokenizer.json",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/nli-1/tokenizer.json",
+          "sha256": "e23095eb61ba944c7be3a5d3e8ec19e37ce7ced0daa03550bde03e83c21b3f8a",
+          "size": 16316151
+        }
+      ]
+    },
+    "pdfplumber": {
+      "name": "pdfplumber",
+      "required": false,
+      "platform": "windows",
+      "type": "python_package",
+      "pip_package": "pdfplumber",
+      "install_subdir": "pdfplumber",
+      "exe": "python/python.exe",
+      "note": "pdfplumber a jeho závislosti z PyPI (MIT / MIT-CMU / BSD-3 / Apache-2.0) do vloženého Pythonu.",
+      "python": {
+        "version": "3.12.8",
+        "asset": "python-3.12.8-embed-amd64.zip",
+        "official_url": "https://www.python.org/ftp/python/3.12.8/python-3.12.8-embed-amd64.zip",
+        "mirror_url": "",
+        "sha256": "8d3f33be9eb810f23c102f08475af2854e50484b8e4e06275e937be61ce3d2fb",
+        "size": 11094114
+      }
+    },
+    "docling": {
+      "name": "Docling",
+      "required": false,
+      "platform": "windows",
+      "type": "python_package",
+      "pip_package": "docling",
+      "install_subdir": "docling",
+      "exe": "python/Scripts/docling.exe",
+      "note": "docling z PyPI (MIT) do vloženého Pythonu.",
+      "python": {
+        "version": "3.12.8",
+        "asset": "python-3.12.8-embed-amd64.zip",
+        "official_url": "https://www.python.org/ftp/python/3.12.8/python-3.12.8-embed-amd64.zip",
+        "mirror_url": "",
+        "sha256": "8d3f33be9eb810f23c102f08475af2854e50484b8e4e06275e937be61ce3d2fb",
+        "size": 11094114
+      }
+    }
+  }
+}
