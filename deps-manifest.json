@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-15",
+  "updated": "2026-08-16",
   "tools": {
     "ollama": {
       "name": "Ollama",
@@ -150,6 +150,39 @@
         "sha256": "8d3f33be9eb810f23c102f08475af2854e50484b8e4e06275e937be61ce3d2fb",
         "size": 11094114
       }
+    },
+    "paddle": {
+      "name": "PP-OCRv6 ONNX",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-paddle",
+      "note": "PP-OCRv6 ONNX z RapidAI/RapidOCR (Apache-2.0): detekcia, klasifikátor uhla, rozpoznávanie.",
+      "files": [
+        {
+          "version": "1",
+          "asset": "det.onnx",
+          "official_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/paddle-1/det.onnx",
+          "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+          "size": 9929594
+        },
+        {
+          "version": "1",
+          "asset": "rec.onnx",
+          "official_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/paddle-1/rec.onnx",
+          "sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+          "size": 21234383
+        },
+        {
+          "version": "1",
+          "asset": "cls.onnx",
+          "official_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/paddle-1/cls.onnx",
+          "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+          "size": 585532
+        }
+      ]
     }
   }
 }

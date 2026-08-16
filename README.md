@@ -48,7 +48,8 @@ gh workflow run mirror.yml \
 | Tesseract OCR 5.5.0 | [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) | Apache-2.0 |
 | ONNX cross-encoder | [cross-encoder/mmarco-mMiniLMv2-L12-H384-v1](https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1) | Apache-2.0 |
 | ONNX NLI model | [MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) · ONNX export [Xenova](https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) | MIT |
+| PP-OCRv6 ONNX (detekcia · uhol · rozpoznávanie) | [RapidAI/RapidOCR](https://www.modelscope.cn/models/RapidAI/RapidOCR) · [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | Apache-2.0 |
 
 Zrkadlené súbory sú nezmenené kópie upstream artefaktov (pri ONNX modeloch
-premenované na `model.onnx` / `tokenizer.json`). Autorstvo a licencie patria ich
+premenované na `model.onnx` / `tokenizer.json`, resp. `det.onnx` / `rec.onnx` / `cls.onnx`). Autorstvo a licencie patria ich
 autorom.
