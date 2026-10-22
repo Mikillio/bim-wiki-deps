@@ -15,13 +15,13 @@
       "archive": "7z",
       "install_subdir": "whisper",
       "exe": "Faster-Whisper-XXL/faster-whisper-xxl.exe",
-      "note": "Zrkadlo vydania Purfview/whisper-standalone-win (Faster-Whisper, CTranslate2 — MIT). Balík obsahuje knižnice cuDNN podľa redistribučných podmienok NVIDIA.",
+      "note": "Nezrkadlené — sťahuje sa priamo z vydania Purfview/whisper-standalone-win. Balík obsahuje knižnice cuDNN podľa redistribučných podmienok NVIDIA.",
       "versions": [
         {
           "version": "r245.4",
           "asset": "Faster-Whisper-XXL_r245.4_windows.7z",
           "official_url": "https://github.com/Purfview/whisper-standalone-win/releases/download/Faster-Whisper-XXL/Faster-Whisper-XXL_r245.4_windows.7z",
-          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/whisper-r245.4/Faster-Whisper-XXL_r245.4_windows.7z",
+          "mirror_url": "",
           "sha256": "237dee23939cdabfc96ef859fc5e584b842c3a5557e0d2ca744e1f87c14c5844",
           "size": 1424256246
         }
