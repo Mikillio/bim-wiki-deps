@@ -1,55 +1,28 @@
 # bim-wiki-deps
 
-Manifest a zrkadlo **voliteľných doplnkov** pre desktopovú aplikáciu
-**BIM LLM Wiki**. Aplikácia si doplnky sťahuje **na požiadanie** a **anonymne**
-(bez tokenu), preto je repozitár verejný.
-
-Sú tu len odkazy na verejne dostupný open-source softvér, jeho kontrolné súčty
-a — pri zrkadlených artefaktoch — samotné súbory.
+Manifest a zrkadlo súčastí, ktoré si desktopová aplikácia **BIM LLM Wiki** sťahuje
+sama. Sú tu len odkazy na verejne dostupný open-source softvér, jeho kontrolné súčty
+a pri zrkadlených súboroch aj samotné súbory.
 
 ## `deps-manifest.json`
 
-Pre každý doplnok: typ, cieľový podpriečinok a verzie s **dvoma zdrojmi** —
-`official_url` (upstream) a `mirror_url` (naše GitHub Releases) — plus
-**`sha256`** a `size`.
+Pre každú súčasť: cieľový podpriečinok a verzie so zdrojom u autora (`official_url`),
+prípadne so zrkadlom v Releases tohto repozitára (`mirror_url`), plus `sha256` a `size`.
 
-Overenie kontrolného súčtu je **fail-closed**: prázdny `sha256` znamená
-*neinštalovať*, nie *nainštalovať bez overenia*.
+Kontrolný súčet je povinný: súbor bez `sha256` sa neinštaluje.
 
-Aplikácia číta raw URL tohto súboru, takže verzie, hashe a URL sa dajú
-aktualizovať bez nového buildu.
+## Zrkadlené súbory a ich licencie
 
-## Zrkadlenie (GitHub Action `mirror.yml`)
+Zrkadlené súbory sú nezmenené kópie vydaní ich autorov, niektoré sú len premenované.
+Autorstvo a licencie patria autorom.
 
-Stiahne upstream asset, zráta SHA-256, vytvorí *Release* `<tool>-<version>`,
-nahrá asset a doplní `mirror_url` + `sha256` do manifestu.
-
-```
-gh workflow run mirror.yml \
-  -f tool=whisper -f version=r245.4 \
-  -f asset_name=Faster-Whisper-XXL_r245.4_windows.7z \
-  -f upstream_url=https://github.com/Purfview/whisper-standalone-win/releases/download/Faster-Whisper-XXL/Faster-Whisper-XXL_r245.4_windows.7z
-```
-
-## Čo sa zrkadlí a čo nie
-
-| | |
-|---|---|
-| ✅ binárky a ONNX modely | GitHub Releases (limit 2 GB na súbor) |
-| ✅ veľké modely | Hugging Face |
-| ❌ **Poppler** | GPL — sťahuje sa výhradne z jeho vlastnej distribúcie |
-| ❌ balíky z PyPI a modely z Ollama registra | sťahujú sa priamo z ich zdrojov |
-
-## Licencie zrkadlených artefaktov
-
-| artefakt | upstream | licencia |
+| súčasť | autor / zdroj | licencia |
 |---|---|---|
-| Faster-Whisper XXL (standalone) | [Purfview/whisper-standalone-win](https://github.com/Purfview/whisper-standalone-win) | MIT (Faster-Whisper, CTranslate2); obsahuje cuDNN podľa redistribučných podmienok NVIDIA |
 | Tesseract OCR 5.5.0 | [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) | Apache-2.0 |
-| ONNX cross-encoder | [cross-encoder/mmarco-mMiniLMv2-L12-H384-v1](https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1) | Apache-2.0 |
-| ONNX NLI model | [MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) · ONNX export [Xenova](https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) | MIT |
-| PP-OCRv6 ONNX (detekcia · uhol · rozpoznávanie) | [RapidAI/RapidOCR](https://www.modelscope.cn/models/RapidAI/RapidOCR) · [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | Apache-2.0 |
+| PDFium | [PDFium](https://pdfium.googlesource.com/pdfium/) · zostavenie [bblanchon/pdfium-binaries](https://github.com/bblanchon/pdfium-binaries) | BSD-3-Clause; archív obsahuje `LICENSE` a licencie pribalených knižníc v priečinku `licenses/` |
+| mmarco-mMiniLMv2 | [cross-encoder/mmarco-mMiniLMv2-L12-H384-v1](https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1) | Apache-2.0 |
+| mDeBERTa-v3 XNLI | [MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) · ONNX export [Xenova](https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) | MIT |
+| RapidOCR (PP-OCRv6) | [RapidAI/RapidOCR](https://www.modelscope.cn/models/RapidAI/RapidOCR) · [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | Apache-2.0 |
 
-Zrkadlené súbory sú nezmenené kópie upstream artefaktov (pri ONNX modeloch
-premenované na `model.onnx` / `tokenizer.json`, resp. `det.onnx` / `rec.onnx` / `cls.onnx`). Autorstvo a licencie patria ich
-autorom.
+Ostatné súčasti sa sťahujú priamo od ich autorov, nie zo zrkadla. Patrí medzi ne
+Poppler, ktorý je pod licenciou GPL.
