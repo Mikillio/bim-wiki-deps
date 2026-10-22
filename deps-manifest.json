@@ -18,6 +18,8 @@
       "install_subdir": "whisper",
       "exe": "Faster-Whisper-XXL/faster-whisper-xxl.exe",
       "note": "Nezrkadlené — sťahuje sa priamo z vydania Purfview/whisper-standalone-win. Balík obsahuje knižnice cuDNN podľa redistribučných podmienok NVIDIA.",
+      "license": "",
+      "license_url": "https://github.com/Purfview/whisper-standalone-win",
       "versions": [
         {
           "version": "r245.4",
@@ -125,6 +127,8 @@
       "type": "model_files",
       "install_subdir": "onnx-nli",
       "note": "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7 (MIT), ONNX int8 export Xenova (onnx/model_quantized.onnx).",
+      "license": "",
+      "license_url": "https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7",
       "files": [
         {
           "version": "1",
