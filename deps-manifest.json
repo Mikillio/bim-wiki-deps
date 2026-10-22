@@ -4,6 +4,8 @@
   "tools": {
     "ollama": {
       "name": "Ollama",
+      "license": "MIT",
+      "license_url": "https://github.com/ollama/ollama/blob/main/LICENSE",
       "required": true,
       "type": "external_installer",
       "official_url": "https://ollama.com/download"
@@ -29,6 +31,8 @@
     },
     "tesseract": {
       "name": "Tesseract OCR",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/tesseract-ocr/tesseract/blob/main/LICENSE",
       "required": false,
       "platform": "windows",
       "archive": "7z",
@@ -48,6 +52,8 @@
     },
     "poppler": {
       "name": "Poppler",
+      "license": "GPL-2.0",
+      "license_url": "https://gitlab.freedesktop.org/poppler/poppler/-/blob/master/COPYING",
       "required": false,
       "platform": "windows",
       "archive": "zip",
@@ -67,6 +73,8 @@
     },
     "pdfium": {
       "name": "PDFium",
+      "license": "BSD-3-Clause",
+      "license_url": "https://pdfium.googlesource.com/pdfium/+/refs/heads/main/LICENSE",
       "required": false,
       "platform": "windows",
       "mirror": true,
@@ -86,6 +94,8 @@
     },
     "reranker": {
       "name": "ONNX cross-encoder",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
       "required": false,
       "type": "model_files",
       "install_subdir": "onnx-reranker",
@@ -136,6 +146,8 @@
     },
     "pdfplumber": {
       "name": "pdfplumber",
+      "license": "MIT",
+      "license_url": "https://github.com/jsvine/pdfplumber/blob/stable/LICENSE.txt",
       "required": false,
       "platform": "windows",
       "type": "python_package",
@@ -154,6 +166,8 @@
     },
     "docling": {
       "name": "Docling",
+      "license": "MIT",
+      "license_url": "https://github.com/docling-project/docling/blob/main/LICENSE",
       "required": false,
       "platform": "windows",
       "type": "python_package",
@@ -172,6 +186,8 @@
     },
     "paddle": {
       "name": "PP-OCRv6 ONNX",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/RapidAI/RapidOCR/blob/main/LICENSE",
       "required": false,
       "type": "model_files",
       "install_subdir": "onnx-paddle",
