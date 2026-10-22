@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-16",
+  "updated": "2026-09-08",
   "tools": {
     "ollama": {
       "name": "Ollama",
@@ -62,6 +62,25 @@
           "mirror_url": "",
           "sha256": "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5",
           "size": 16107283
+        }
+      ]
+    },
+    "pdfium": {
+      "name": "PDFium (rasterizácia a čítanie PDF)",
+      "required": false,
+      "platform": "windows",
+      "mirror": true,
+      "archive": "tgz",
+      "install_subdir": "pdfium",
+      "exe": "bin/pdfium.dll",
+      "versions": [
+        {
+          "version": "151.0.7881.0-v8",
+          "asset": "pdfium-v8-win-x64.tgz",
+          "official_url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7881/pdfium-v8-win-x64.tgz",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/pdfium-151.0.7881.0/pdfium-v8-win-x64.tgz",
+          "sha256": "3b34ee0f9e59e8160a8a097a3f7a15cf2328361fc998276fa9a8e7c30ec09a7d",
+          "size": 12121549
         }
       ]
     },
