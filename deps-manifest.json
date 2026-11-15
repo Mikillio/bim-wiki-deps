@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-08",
+  "updated": "2026-11-15",
   "tools": {
     "ollama": {
       "name": "Ollama",
@@ -220,6 +220,40 @@
           "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/paddle-1/cls.onnx",
           "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
           "size": 585532
+        }
+      ]
+    },
+    "obrazky": {
+      "name": "DocumentFigureClassifier v2.5",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-obrazky",
+      "license": "MIT",
+      "license_url": "https://huggingface.co/docling-project/DocumentFigureClassifier-v2.5",
+      "files": [
+        {
+          "version": "1",
+          "asset": "klasifikator.onnx",
+          "official_url": "",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/obrazky-1/klasifikator.onnx",
+          "sha256": "89e7896a150a1eaeba76ca76a294edb37784914577a7d7fa54bd3a783382259c",
+          "size": 16149814
+        },
+        {
+          "version": "1",
+          "asset": "ziak.onnx",
+          "official_url": "",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/obrazky-1/ziak.onnx",
+          "sha256": "09a13bd932d1edc212c7054ac4472fc8c1e490a5a17fbca13ead82a4aa95cb44",
+          "size": 902167
+        },
+        {
+          "version": "1",
+          "asset": "LICENSE-DocumentFigureClassifier-v2.5.txt",
+          "official_url": "",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/obrazky-1/LICENSE-DocumentFigureClassifier-v2.5.txt",
+          "sha256": "775888cce32d905048b63fed34e8add072f3609d14af8e8ae33c9ac2e5f07321",
+          "size": 1381
         }
       ]
     }
