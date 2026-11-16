@@ -25,6 +25,7 @@ Autorstvo a licencie patria autorom.
 | mDeBERTa-v3 XNLI | [MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) · ONNX export [Xenova](https://huggingface.co/Xenova/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7) | MIT |
 | RapidOCR (PP-OCRv6) | [RapidAI/RapidOCR](https://www.modelscope.cn/models/RapidAI/RapidOCR) · [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | Apache-2.0 |
 | DocumentFigureClassifier v2.5 | [docling-project/DocumentFigureClassifier-v2.5](https://huggingface.co/docling-project/DocumentFigureClassifier-v2.5) | MIT; text licencie je v release ako LICENSE-DocumentFigureClassifier-v2.5.txt |
+| PP-DocLayoutV3 | [PaddlePaddle/PP-DocLayoutV3_onnx](https://huggingface.co/PaddlePaddle/PP-DocLayoutV3_onnx) · [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | Apache-2.0; text licencie je v release ako LICENSE-PP-DocLayoutV3.txt |
 
 Release obrazky-1 obsahuje aj súbor ziak.onnx, ktorý je dielom autora aplikácie a nie je pod otvorenou licenciou.
 

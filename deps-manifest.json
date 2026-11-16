@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "tools": {
     "ollama": {
       "name": "Ollama",
@@ -254,6 +254,32 @@
           "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/obrazky-1/LICENSE-DocumentFigureClassifier-v2.5.txt",
           "sha256": "775888cce32d905048b63fed34e8add072f3609d14af8e8ae33c9ac2e5f07321",
           "size": 1381
+        }
+      ]
+    },
+    "rozlozenie": {
+      "name": "PP-DocLayoutV3 ONNX",
+      "required": false,
+      "type": "model_files",
+      "install_subdir": "onnx-rozlozenie",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/PaddlePaddle/PP-DocLayoutV3_onnx",
+      "files": [
+        {
+          "version": "1",
+          "asset": "rozlozenie.onnx",
+          "official_url": "https://huggingface.co/PaddlePaddle/PP-DocLayoutV3_onnx/resolve/46bbdf188bb0a772c08aed74882ce7e51a8f1ea6/inference.onnx",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/rozlozenie-1/rozlozenie.onnx",
+          "sha256": "45bf71750b00739a41fc209f132eb104a4d6b5bb29483c9078164d8b87cf28ba",
+          "size": 130502049
+        },
+        {
+          "version": "1",
+          "asset": "LICENSE-PP-DocLayoutV3.txt",
+          "official_url": "",
+          "mirror_url": "https://github.com/Mikillio/bim-wiki-deps/releases/download/rozlozenie-1/LICENSE-PP-DocLayoutV3.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "size": 11358
         }
       ]
     }
